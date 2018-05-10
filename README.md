@@ -13,4 +13,4 @@ These notes include things
 - and sometimes are just for fun.  
 
 Feel free to file an issue or create a pull request :-)<br>
-Licensed under CC-BY-SA-4.0. 
+Licensed under [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/). 
