@@ -3,7 +3,7 @@ title: "README"
 date: 2018-05-09T14:21:20+02:00
 type: "post"
 ---
-These are my notes which are maintained in GitHub and published at [reuben.honigwachs.de](https://reuben.honigwachs.de). 
+These are my notes which are maintained in [GitHub](https://github.com/YaguraStation/notes) and published at [reuben.honigwachs.de](https://reuben.honigwachs.de). 
 
 These notes include things
 
