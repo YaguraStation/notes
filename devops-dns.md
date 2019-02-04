@@ -4,7 +4,7 @@ date: 2018-02-03
 author: Reuben Honigwachs 
 type: "post"
 ---
-[Gareth Dwyer](https://twitter.com/sixhobbits) delivers entertaining talks one could describe as _tech talk standup_. I very much enjoy them. He's a brilliant software engineer and reignited my respect for technical writing. At a recent [DevOps Cape Town](https://devops.capetown/) meetup he presented a simple set of tasks and their realisation. In the end sparking a discussion with the the question: _"Is this the DevOps way?"_. 
+[Gareth Dwyer](https://twitter.com/sixhobbits) delivers entertaining talks one could describe as _tech talk standup_. I very much enjoy them. He's a brilliant software engineer and reignited my respect for technical writing. At a recent [DevOps Cape Town](https://devops.capetown/) meetup he presented a simple set of tasks and their realisation. In the end sparking a discussion with the question: _"Is this the DevOps way?"_. 
 
 As it is typical for backoffice applications, email plays a central role, which in turn means dealing with dangerously unusable web UI of rent-seeking local registrars. Uncertainty starts creeping up and how to get some DevOps in the mix.
 
@@ -21,7 +21,7 @@ How could this look like for DNS?
 
 In order to automate things you'll need DNS with an API. Next to running your own _BIND_ or _djbdns_, examples are: [Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/APIReference/Welcome.html), [Cloudflare](https://api.cloudflare.com/#dns-records-for-a-zone-import-dns-records), [Dyn](https://help.dyn.com/dns-api-knowledge-base/) ... or **GCP Cloud DNS**. With all GCP services, including Cloud DNS, you get the holy trinity of [API](https://cloud.google.com/dns/docs/reference/v1/), [command line](https://cloud.google.com/sdk/gcloud/reference/dns/), and Web UI. 
 
-Here _"DNS"_ is not _"registrar"_. You'd have your regisrar point to a DNS service of choice. 
+Here _"DNS"_ is not _"registrar"_. You'd have your registrar point to a DNS service of choice. 
 
 In terms of CI/CD tooling everything is possible with GCP. I like [GitLab](https://about.gitlab.com/solutions/google-cloud-platform/) and [Travis](https://travis-ci.org/) very much and tend to opt for [Cloud Build](https://cloud.google.com/cloud-build/) which naturally works well with [GCP Cloud Source Repos](https://cloud.google.com/source-repositories/) where we will store the zone file for this example. 
 
