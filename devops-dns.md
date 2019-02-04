@@ -17,7 +17,7 @@ I'm a fan of "infrastructure as code" where you have everything originate from a
 
 How could this look like for DNS? 
 
-![CICD with DNS](/notes/dns-cicd.png)
+![CICD with DNS](https://reuben.honigwachs.de/img/dns-cicd.png)
 
 In order to automate things you'll need DNS with an API. Next to running your own _BIND_ or _djbdns_, examples are: [Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/APIReference/Welcome.html), [Cloudflare](https://api.cloudflare.com/#dns-records-for-a-zone-import-dns-records), [Dyn](https://help.dyn.com/dns-api-knowledge-base/) ... or **GCP Cloud DNS**. With all GCP services, including Cloud DNS, you get the holy trinity of [API](https://cloud.google.com/dns/docs/reference/v1/), [command line](https://cloud.google.com/sdk/gcloud/reference/dns/), and Web UI. 
 
@@ -27,7 +27,7 @@ In terms of CI/CD tooling everything is possible with GCP. I like [GitLab](https
 
 For simplest implementation we assign the _DNS Administrator_ role to the [Cloud Build service account](https://cloud.google.com/cloud-build/docs/securing-builds/configure-access-control#service_account) within the project. Then we define a trigger for any push of the zone file to the master branch in the repo as follows:
  
-![Screenshot of triger configuration](/notes/dns-build-trigger-conf.png)
+![Screenshot of triger configuration](https://reuben.honigwachs.de/img/dns-build-trigger-conf.png)
 
 The above referenced _cloudbuild.yaml_ looks as follows. Instead of assembling our own image we use the readily available _gcloud_ [cloud builder](https://github.com/GoogleCloudPlatform/cloud-builders) to clone the repo and import the zone file: 
 ```
@@ -42,7 +42,7 @@ The tool `gcloud dns record-sets` is quite nifty and validates your input files 
 
 Cloud Build publishes update messages to a [Cloud Pub/Sub](https://cloud.google.com/pubsub/) topic called `cloud-builds` which is automatically created when enabling the Cloud Build API. From there other actions such as notifications can be triggered. In general we're talking about a very low deploy time and once it's in GCP Cloud DNS we enjoy an astonishing propagation time we're used to from Google ;-).  
 
-![Screenshot of cloud builder build time](/notes/dns-build-time.png)
+![Screenshot of cloud builder build time](https://reuben.honigwachs.de/img/dns-build-time.png)
 
 Oh, yes, this is what a BIND zone file looks like: 
 ```
@@ -59,5 +59,5 @@ www.honigwachs.info. 300 IN A 151.101.65.195
 yetanother.honigwachs.info. 300 IN A 151.101.1.195
 ```
 
-<small class="credits theme-by text-muted">[CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/). Comment or improve on this note by filing an issue or PR [here](https://github.com/YaguraStation/notes/blob/master/{{.}})</small><br />
+<small class="credits theme-by text-muted">[CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/). Comment or improve on this note by filing an issue or PR [here](https://github.com/YaguraStation/notes/blob/master/devops-dns.md)</small><br />
 <small class="credits theme-by text-muted">©2018 Google LLC, used with permission. Google and the Google logo are registered trademarks of Google LLC.</small>
