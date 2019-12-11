@@ -1,6 +1,6 @@
 ---
 title: "DNS, the DevOps way"
-date: 2018-02-03
+date: 2019-02-03
 author: Reuben Honigwachs 
 type: "post"
 ---
