@@ -1,9 +1,9 @@
----
-title: "DNS, the DevOps way"
-date: 2019-02-03
-author: Reuben Honigwachs 
-type: "post"
----
++++
+title = "DNS, the DevOps way"
+date = "2019-02-03"
+author = "Reuben Honigwachs"
+kind = "page"
++++
 [Gareth Dwyer](https://twitter.com/sixhobbits) delivers entertaining talks one could describe as _tech talk standup_. I very much enjoy them. He's a brilliant software engineer and reignited my respect for technical writing. At a recent [DevOps Cape Town](https://devops.capetown/) meetup he presented a simple set of tasks and their realisation. In the end sparking a discussion with the question: _"Is this the DevOps way?"_. 
 
 As it is typical for backoffice applications, email plays a central role, which in turn means dealing with dangerously unusable web UI of rent-seeking local registrars. Uncertainty starts creeping up and how to get some DevOps in the mix.
